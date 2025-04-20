@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/southkorea.css') }}" type="text/css" />
+    <title>South Korea</title>
+  </head>
+  <body>
+    <script src="./country_page.js"></script>
+    <div class="nav">
+      <a href="#home-page"><button title="Home Page"></button></a>
+      <a href="#about-page"><button title="About Section"></button></a>
+      <a href="#attraction-page"><button title="Attractions"></button></a>
+      <a href="#food-page" title="Food"><button></button></a>
+      <a href="#quiz-page" title="Quiz"><button></button></a>
+    </div>
+    <div class="container">
+      <section id="home-page">
+        <div class="low-opacity-bg-image" id="index-container">
+          <h1>South Korea</h1>
+          <p>A Land of Dynamic Cities and Tranquil Traditions</p>
+        </div>
+        <div class="fade"></div>
+      </section>
+      <section>
+        <h2 id="about-page" class="page-title">Travel Information</h2>
+        <br />
+        <br />
+        <div class="centre">
+          <div class="text-area">
+            <h3>Geography</h3>
+            <p>
+              South Korea is located on the southern half of the Korean Peninsula in East Asia. It is bordered by North Korea to the north, surrounded by the Sea of Japan to the east and the Yellow Sea to the west. South Korea's terrain includes mountains, plains, and coastal areas, with Seoul as its bustling capital.
+            </p>
+            <h3>Climate</h3>
+            <p>
+              South Korea experiences four distinct seasons: spring, summer, autumn, and winter. Summers (June to August) are hot and humid, while winters (December to February) are cold and snowy, particularly in the northern regions. Spring and autumn offer mild temperatures and are considered the best times to visit.
+            </p>
+            <h3>Cultural Etiquette</h3>
+            <p>
+              South Korea values respect and tradition. Bowing is a common form of greeting, and addressing people by their titles or last names is customary. Removing shoes before entering homes or traditional spaces is standard. When dining, use both hands to accept or offer items as a sign of respect.
+            </p>
+            <h3>Transportation</h3>
+            <p>
+              South Korea has a modern transportation system, including high-speed trains (KTX), subways, buses, and taxis. The public transport system is efficient, with apps like KakaoMap or Naver Map providing real-time navigation. The T-Money card is a convenient payment method for public transit.
+            </p>
+            <h3>Daily Costs</h3>
+            <p>
+              Daily expenses in South Korea range from ₩50,000 to ₩150,000 (40 to 120 USD) depending on your travel style. Budget travelers can enjoy affordable street food and guesthouses, while mid-range options include hotels and restaurants. Many tourist attractions have reasonable entry fees.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="attraction-page">
+        <div class="slider-container">
+          <h2 class="page-title">Attractions</h2>
+          <s id="s1"></s>
+          <s id="s2"></s>
+          <s id="s3"></s>
+          <s id="s4"></s>
+          <div class="slider">
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img src="{{ url_for('static', filename='img/south_korea/gyeongbokgung_palace.avif') }}" class="food-img" alt="Gyeongbokgung Palace" />
+
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Gyeongbokgung Palace</h2>
+                    <p>
+                      Located in Seoul, this majestic palace is a symbol of South Korea's rich history. Visitors can experience traditional architecture and cultural performances here.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img src="{{ url_for('static', filename='img/south_korea/jeju.jpg') }}" class="food-img" alt="Jeju Island" />
+
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Jeju Island</h2>
+                    <p>
+                      Known as the "Hawaii of Korea," Jeju Island offers stunning beaches, volcanic landscapes, and picturesque waterfalls.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img src="{{ url_for('static', filename='img/south_korea/namsan_tower.jpg') }}" class="food-img" alt="Namsan Tower" />
+
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Namsan Tower</h2>
+                    <p>
+                      This iconic observation tower in Seoul provides panoramic views of the city, especially stunning at night.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img src="{{ url_for('static', filename='img/south_korea/bukchon_hanok_village.jpg') }}" class="food-img" alt="Bukchon Hanok Village" />
+
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Bukchon Hanok Village</h2>
+                    <p>
+                      Step back in time in this historic village featuring traditional Korean houses (hanok) nestled within modern Seoul.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="prevNext">
+            <div><a href="#s4">←</a><a href="#s2">→</a></div>
+            <div><a href="#s1">←</a><a href="#s3">→</a></div>
+            <div><a href="#s2">←</a><a href="#s4">→</a></div>
+            <div><a href="#s3">←</a><a href="#s1">→</a></div>
+          </div>
+          <div class="bullets">
+            <a href="#s1"></a>
+            <a href="#s2"></a>
+            <a href="#s3"></a>
+            <a href="#s4"></a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 id="food-page" class="page-title">Food</h2>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <button class="pre-btn">←</button>
+        <button class="nxt-btn">→</button>
+        <div class="food-container">
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/south_korea/kimchi.jpg') }}" class="food-img" alt="Kimchi" />
+
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Kimchi</h2>
+              <p class="food-description">
+                A staple of Korean cuisine, kimchi is a fermented vegetable dish, usually made with napa cabbage and radishes.
+              </p>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/south_korea/bibimbap.jpg') }}" class="food-img" alt="Bibimbap" />
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Bibimbap</h2>
+              <p class="food-description">
+                A hearty dish featuring a mix of rice, vegetables, egg, and meat, all topped with spicy gochujang sauce.
+              </p>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/south_korea/bulgogi.jpg') }}" class="food-img" alt="Bulgogi (Korean BBQ)" />
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Bulgogi</h2>
+              <p class="food-description">
+                Marinated beef grilled to perfection, Bulgogi is one of the most popular Korean barbecue dishes.
+              </p>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/south_korea/mandu.jpg') }}" class="food-img" alt="Mandu (Korean Dumplings)" />
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Mandu</h2>
+              <p class="food-description">
+                Korean dumplings filled with vegetables, meat, or seafood, often served steamed, fried, or in soups.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <section id="quiz-page">
+    <div class="centre">
+        <div class="quiz">
+          <h1>Quiz</h1>
+          <h3>Test you knowledge on South Korea</h3>
+          <p>Read the questions and answer with one of the given options.</p>
+          <p>Check the answer and move on to the next question if it is correct</p>
+          <p>If you chose the incorrect answer, try again until you have answered it right.</p>
+          <br>
+          <p><b style="font-weight: bolder;">Note: only first the try on the question will be scored.</b></p> 
+          <br>
+          
+          <button onclick="window.location.href='/static/quiz_attempt_copy/quizkorea/index.html'">START QUIZ</button>
+          <br>
+          <br>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+</body>
+
+<script>
+const productContainers = [
+  ...document.querySelectorAll(".food-container"),
+];
+const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
+const preBtn = [...document.querySelectorAll(".pre-btn")];
+
+productContainers.forEach((item, i) => {
+  let containerDimensions = item.getBoundingClientRect();
+  let containerWidth = containerDimensions.width/2;
+
+  nxtBtn[i].addEventListener("click", () => {
+    item.scrollLeft += containerWidth;
+  });
+
+  preBtn[i].addEventListener("click", () => {
+    item.scrollLeft -= containerWidth;
+  });
+});
+</script>
+</html>
+

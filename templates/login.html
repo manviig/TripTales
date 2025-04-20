@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport'Pothik': A travel " content="width=device-width, initial-scale=1.0">
+    <title>TRIPTALES</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('/image/828217_travel-hd-wallpapers_3464x2309_h.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #052f46;
+            font-size: 32px;
+            font-weight: bolder;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container input[type="text"],
+        .container input[type="password"],
+        .container input[type="email"],
+        .container input[type="date"],
+        .container input[type="tel"],
+        .container select,
+        .container textarea {
+            width: calc(100% - 40px);
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .container button {
+            width: calc(100% - 40px);
+            padding: 15px;
+            margin-top: 20px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .container button:hover {
+            background: linear-gradient(to right, #5a0eb4, #206be6);
+        }
+        .container .options {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .container .options a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 5px;
+        }
+        .container .options a:hover {
+            text-decoration: underline;
+        }
+        .container .social-login {
+            margin: 20px 0;
+        }
+        .container .social-login a {
+            margin: 0 10px;
+        }
+        .container .social-login img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>TRIPTALES</h1>
+    
+    <div class="container" id="login-box">
+        <h2>Login</h2>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <a href="#" style="float: right; margin-right: 20px;" onclick="showForgotPassword()">Forgot password?</a>
+            <button type="submit">LOGIN</button>
+        </form>
+        <div class="social-login">
+            <p>Or Sign Up Using</p>
+           
+            <a href="#"><img src="/static/image/google.png" alt="Google"></a>
+        </div>
+        <div class="options">
+            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="signup-box" style="display:none;">
+        <h2>Sign Up</h2>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="date" placeholder="Date of Birth" required>
+            <input type="tel" placeholder="Phone Number" pattern="01[0-9]{9}" required>
+            <input type="text" placeholder="National ID or Passport Number" pattern="[0-9]{19}" required>
+            <textarea placeholder="Address" required></textarea>
+            <select required>
+                <option value="" disabled selected>Favorite Place</option>
+                <option value="Hill">Hill</option>
+                <option value="Forest">Forest</option>
+                <option value="Sea">Sea</option>
+            </select>
+            <button type="submit">SIGN UP</button>
+        </form>
+        <div class="options">
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="forgot-password-box" style="display:none;">
+        <h2>Forgot Password</h2>
+        <form>
+            <input type="email" placeholder="Email or Phone" required>
+            <button type="submit">RESET PASSWORD</button>
+        </form>
+        <div class="options">
+            <p>Remembered your password? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showSignup() {
+            document.getElementById('login-box').style.display = 'none';
+            document.getElementById('signup-box').style.display = 'block';
+            document.getElementById('forgot-password-box').style.display = 'none';
+        }
+
+        function showLogin() {
+            document.getElementById('signup-box').style.display = 'none';
+            document.getElementById('login-box').style.display = 'block';
+            document.getElementById('forgot-password-box').style.display = 'none';
+        }
+
+        function showForgotPassword() {
+            document.getElementById('signup-box').style.display = 'none';
+            document.getElementById('login-box').style.display = 'none';
+            document.getElementById('forgot-password-box').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

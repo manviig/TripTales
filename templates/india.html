@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/india.css') }}" type="text/css" />
+    <title>India</title>
+  </head>
+  
+    <script src="./country_page.js"></script>
+    <div class="nav">
+      <a href="#home-page"><button title="Home Page"></button></a>
+      <a href="#about-page"><button title="About Section"></button></a>
+      <a href="#attraction-page"><button title="Attractions"></button></a>
+      <a href="#food-page" title="Food"><button></button></a>
+      <a href="#quiz-page" title="Quiz"><button></button></a>
+    </div>
+    <div class="container">
+      <section id="home-page">
+        <div class="low-opacity-bg-image" id="index-container">
+          <h1>India</h1>
+          <p>A Land of Dream and Diversity</p>
+        </div>
+        <div class="fade"></div>
+      </section>
+      <section>
+        <h2 id="about-page" class="page-title">Travel Information</h2>
+        <br />
+        <br />
+        <div class="centre">
+          <div class="text-area">
+            <h3>Geography</h3>
+<p>
+  India is a country located in South Asia, bordered by Pakistan, China, Nepal, Bhutan, Bangladesh, and Myanmar. It is the seventh-largest country by land area and the second-most populous, with over 1.4 billion people. The country's landscape is diverse, featuring the Himalayan mountain range in the north, vast plains, deserts, and coastal regions in the south. 
+</p>
+<h3>Climate</h3>
+<p>
+  India has a tropical climate, with distinct summer, monsoon, and winter seasons. The summer months (March to June) can be extremely hot, with temperatures often reaching over 40°C in many regions. The monsoon season (June to September) brings heavy rains, especially to the western coast and northeastern regions. Winters (November to February) are generally mild, with temperatures ranging from 10°C to 25°C, although northern India can experience cold temperatures and snowfall.
+</p>
+<h3>Cultural Etiquette</h3>
+<p>
+  India is a country with a rich and diverse cultural heritage. When visiting, it is customary to greet with a "Namaste" or "Namaskar" with hands pressed together. It is important to respect religious practices, especially in temples, where shoes should be removed. Modest clothing is recommended when visiting places of worship. Also, be aware of the local customs, such as avoiding public displays of affection and respecting local dietary preferences (e.g., vegetarianism in many parts of the country).
+</p>
+
+<h3>Transportation</h3>
+<p>
+  India has an extensive and varied transportation network, with options ranging from the famous Indian Railways to domestic flights, buses, taxis, and rickshaws. The train system is one of the largest in the world, connecting major cities and towns across the country. In urban areas, auto-rickshaws and cabs are common modes of transportation. It's advisable to use apps like Uber or Ola for convenience and safety.
+</p>
+
+<h3>Daily Costs</h3>
+<p>
+  On average, daily expenses in India can range from ₹1,500 to ₹4,500 (20 to 60 USD), depending on your style of travel. This includes meals, transportation, and accommodation. Budget travelers can find affordable guesthouses and street food, while mid-range options offer comfortable stays and meals in restaurants. Tourist attractions often have nominal entry fees.
+</p>
+
+          </div>
+        </div>
+      </section>
+      <section id="attraction-page">
+        <div class="slider-container">
+          <h2 class="page-title">Attractions</h2>
+          <s id="s1"></s>
+          <s id="s2"></s>
+          <s id="s3"></s>
+          <s id="s4"></s>
+          <div class="slider">
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img
+                    class="card-img"
+                    src="{{ url_for('static', filename='img/taj mahal.jpg') }}" alt="Taj Mahal"
+                    alt="Taj Mahal"
+                  />
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Taj Mahal</h2>
+                    <p>
+                      The Taj Mahal, located in Agra, India, is a magnificent white marble mausoleum built by Emperor Shah Jahan in memory of his beloved wife, Mumtaz Mahal. A UNESCO World Heritage Site and one of the Seven Wonders of the World, it symbolizes eternal love, showcases exquisite Mughal architecture, and attracts millions of visitors annually.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img
+                    class="card-img"
+                    src="{{ url_for('static', filename='img/qutu.jpg') }}" alt="Qutub Minar"
+                    alt="Qutub Minar"
+                  />
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Qutub Minar</h2>
+                    <p>
+                      The Qutub Minar in Delhi, India, is the tallest brick minaret in the world, standing 73 meters high. Built in the 12th century by Qutb al-Din Aibak and finished by his successors, it is a UNESCO World Heritage Site. The minaret is beautifully decorated with carvings and Quranic inscriptions, showcasing India's rich history and architecture. It is part of the Qutub Complex, which includes other historic monuments like the Iron Pillar and Alai Darwaza, making it a popular destination for visitors worldwide.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img
+                    class="card-img"
+                    src="{{ url_for('static', filename='img/amber.jpg') }}" 
+                    alt="Amber Fort"
+                  />
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Amber Fort</h2>
+                    <p>
+
+                      Amber Fort, located in Jaipur, Rajasthan, is a stunning example of Rajput architecture and history. Built in 1592 by Raja Man Singh I and expanded by later rulers, the fort is a blend of red sandstone and white marble. It features intricate carvings, sprawling courtyards, and ornate palaces like the Sheesh Mahal (Mirror Palace). Overlooking the tranquil Maota Lake, the fort offers breathtaking views of the surrounding hills. Known for its grandeur and historical significance, Amber Fort is a UNESCO World Heritage Site and one of Jaipur's most popular tourist destinations.                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img
+                    class="card-img"
+                    src="{{ url_for('static', filename='img/keralabw.jpg') }}" 
+                    alt="Kerala Backwaters"
+                  />
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Kerala Backwaters</h2>
+        <p>
+          The backwaters of Kerala offer a unique and scenic experience, with boat rides through tranquil waters surrounded by lush greenery and traditional village life.
+        </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="prevNext">
+            <div><a href="#s4">←</a><a href="#s2">→</a></div>
+            <div><a href="#s1">←</a><a href="#s3">→</a></div>
+            <div><a href="#s2">←</a><a href="#s4">→</a></div>
+            <div><a href="#s3">←</a><a href="#s1">→</a></div>
+          </div>
+          <div class="bullets">
+            <a href="#s1"></a>
+            <a href="#s2"></a>
+            <a href="#s3"></a>
+            <a href="#s4"></a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 id="food-page" class="page-title">Food</h2>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <button class="pre-btn">←</button>
+        <button class="nxt-btn">→</button>
+        <div class="food-container">
+          <div class="food-card">
+            <div class="food-img-container">
+              <a href ="https://www.indianhealthyrecipes.com/chicken-biryani-recipe/" target = "blank">
+              
+              <img
+                src="{{ url_for('static', filename='img/biryani.jpg') }}" class="food-img" alt="Biryani" 
+                class="food-img"
+                alt=""
+              />
+            </a>
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Biryani</h2>
+    <p class="food-description">
+      A fragrant rice dish cooked with spices, saffron, and tender pieces of chicken, mutton, or vegetables.
+    </p>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/butterc.jpg') }}" class="food-img" alt="Butter Chicken" />
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Butter Chicken</h2>
+              <p class="food-description">
+                A rich and creamy dish made with marinated chicken cooked in a spiced tomato-based gravy.
+              </p>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/dosa1.jpg') }}" class="food-img" alt="Dosa" />
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Dosa</h2>
+    <p class="food-description">
+      A crispy fermented rice and lentil crepe, often served with coconut chutney and sambar.
+    </p>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/Samosa.jpg') }}" class="food-img" alt="Samosa" />
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Samosa</h2>
+    <p class="food-description">
+      A popular snack, samosas are deep-fried pastries filled with spiced potatoes, peas, and sometimes meat.
+    </p>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/josh.jpg') }}" class="food-img" alt="Josh" />
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Rogan Josh</h2>
+  <p class="food-description">
+    A flavorful Kashmiri dish made with tender pieces of lamb or goat, slow-cooked in a rich and aromatic gravy of yogurt, garlic, and spices.
+  </p>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-img-container">
+              <img src="{{ url_for('static', filename='img/italy/food/risotto.jpg') }}" class="food-img" alt="Risotto" />
+            </div>
+            <div class="food-info">
+              <h2 class="food-name">Khichdi</h2>
+              <p class="food-description">
+                A comforting and wholesome dish made with a mix of rice and lentils, often flavored with turmeric, spices, and served with ghee or pickles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+<section id="quiz-page">
+<div class="centre">
+    <div class="quiz">
+      <h1>Quiz</h1>
+      <h3>Test you knowledge on India</h3>
+      <p>Read the questions and answer with one of the given options.</p>
+      <p>Check the answer and move on to the next question if it is correct</p>
+      <p>If you chose the incorrect answer, try again until you have answered it right.</p>
+      <br>
+      <p><b style="font-weight: bolder;">Note: only first the try on the question will be scored.</b></p> 
+      <br>
+      
+      <button onclick="window.location.href='/static/quiz_attempt_copy/quiz _attempt_india/index.html'">START QUIZ</button>
+      <br>
+      <br>
+  </div>
+</div>
+</section>
+<section id="states-page">
+
+  <h2 class="page-title">States of India</h2>
+  <br /><br />
+
+  <div class="states-container">
+    <div class="state-card">
+
+      <h2 class="state-name">Andhra Pradesh</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Arunachal Pradesh</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Assam</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Bihar</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Chhattisgarh</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Goa</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Gujarat</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Haryana</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Himachal Pradesh</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Jharkhand</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Karnataka</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Kerala</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Madhya Pradesh</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Maharashtra</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Manipur</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Meghalaya</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Mizoram</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Nagaland</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Odisha</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Punjab</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Rajasthan</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Sikkim</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Tamil Nadu</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Telangana</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Tripura</h2>
+    </div>
+    <div class="state-card">
+      <h2 class="state-name">Uttar Pradesh</h2>
+    </div>
+    <div class="state-card">
+      <a href="{{ url_for('uttarakhand') }}" class="state-link">
+        <h2 class="state-name">Uttarakhand</h2>
+      </a>
+    </div>
+    
+    <div class="state-card">
+      <h2 class="state-name">West Bengal</h2>
+    </div>
+
+  </div>
+</section>
+<div> </div>
+</div>
+</body>
+
+<script>
+const productContainers = [
+...document.querySelectorAll(".food-container"),
+];
+const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
+const preBtn = [...document.querySelectorAll(".pre-btn")];
+
+productContainers.forEach((item, i) => {
+let containerDimensions = item.getBoundingClientRect();
+let containerWidth = containerDimensions.width/2;
+
+nxtBtn[i].addEventListener("click", () => {
+item.scrollLeft += containerWidth;
+});
+
+preBtn[i].addEventListener("click", () => {
+item.scrollLeft -= containerWidth;
+});
+});
+</script>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/uttarakhand.css') }}" type="text/css" />
+    <title>Uttarakhand</title>
+  </head>
+  
+    <script src="./country_page.js"></script>
+    <div class="nav">
+      <a href="#home-page"><button title="Home Page"></button></a>
+      <a href="#about-page"><button title="About Section"></button></a>
+      <a href="#attraction-page"><button title="Attractions"></button></a>
+      <a href="#food-page" title="Food"><button></button></a>
+      <a href="#quiz-page" title="Quiz"><button></button></a>
+    </div>
+    <div class="container">
+      <section id="home-page">
+        <div class="low-opacity-bg-image" id="index-container">
+          <h1>Uttarakhand</h1>
+          <p>Land of Gods, Land of Wonders
+        </p>
+        </div>
+        <div class="fade"></div>
+      </section>
+      <section>
+        <h2 id="about-page" class="page-title">Travel Information</h2>
+        <br />
+        <br />
+        <div class="centre">
+          <div class="text-area">
+            <h3>Geography</h3>
+            <p>
+              Uttarakhand, located in the northern part of India, is known for its picturesque Himalayan landscapes, sacred temples, and diverse flora and fauna. It is home to the famous hill stations of Nainital, Mussoorie, and Rishikesh, and the revered Char Dham pilgrimage sites.
+            </p>
+            <h3>Climate</h3>
+            <p>
+              The climate of Uttarakhand varies from sub-tropical in the lower regions to alpine in the higher altitudes. Summers (March to June) are pleasant, while winters (November to February) bring snowfall in the higher regions, making it a popular winter destination.
+            </p>
+            <h3>Cultural Etiquette</h3>
+            <p>
+              Uttarakhand has a rich cultural heritage with traditions influenced by the mountainous terrain. While visiting, it's important to respect local customs, such as dressing modestly when visiting temples and interacting with the local communities.
+            </p>
+
+            <h3>Transportation</h3>
+            <p>
+              Uttarakhand is well-connected by road and rail, with buses and taxis being common modes of transport. The nearest airport is Jolly Grant Airport in Dehradun, which connects the state to major cities in India.
+            </p>
+
+            <h3>Daily Costs</h3>
+            <p>
+              Daily expenses in Uttarakhand can vary widely. Budget travelers can find affordable accommodation and food, while mid-range travelers can expect slightly higher costs for meals and stays in well-known tourist destinations.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="attraction-page">
+        <div class="slider-container">
+          <h2 class="page-title">Attractions in Uttarakhand</h2>
+          <s id="s1"></s>
+          <s id="s2"></s>
+          <s id="s3"></s>
+          <s id="s4"></s>
+          <div class="slider">
+            <!-- Slide 1 - Anusuya Devi Temple -->
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img class="card-img" src="{{ url_for('static', filename='img/uk/anusuya_devi_temple.jpg') }}" alt="Anusuya Devi Temple" />
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Anusuya Devi Temple</h2>
+                    <p>
+                      Located near Chopta, Uttarakhand, the Anusuya Devi Temple is dedicated to Goddess Anusuya. Surrounded by lush greenery, it offers a peaceful ambiance and is a popular pilgrimage site for devotees.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Slide 2 - Devalgarh Temple -->
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img class="card-img" src="{{ url_for('static', filename='img/uk/devalgarh_temple.jpg') }}" alt="Devalgarh Temple" />
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Devalgarh Temple</h2>
+                    <p>
+                      The Devalgarh Temple, located near Srinagar in Uttarakhand, is famous for its ancient architecture. It is an important religious and historical site, attracting visitors interested in culture and spirituality.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Slide 3 - Latu Devta Temple -->
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img class="card-img" src="{{ url_for('static', filename='img/uk/latu_devta_temple.jpg') }}" alt="Latu Devta Temple" />
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Latu Devta Temple</h2>
+                    <p>
+                      Located in Chamoli, Uttarakhand, the Latu Devta Temple is associated with the Nanda Devi pilgrimage. The temple is deeply revered by the locals, especially during the Nanda Devi Mela.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Slide 4 - Purnagiri Temple -->
+            <div class="slide">
+              <div class="card">
+                <div class="img-container">
+                  <img class="card-img" src="{{ url_for('static', filename='img/uk/purnagiri_temple.jpg') }}" alt="Purnagiri Temple" />
+                </div>
+                <div class="details">
+                  <div class="content">
+                    <h2>Purnagiri Temple</h2>
+                    <p>
+                      Situated in Champawat, Uttarakhand, the Purnagiri Temple is revered by locals and holds great spiritual significance. The temple offers breathtaking views of the surrounding hills and is a popular pilgrimage site.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+          <div class="prevNext">
+            <div><a href="#s4">←</a><a href="#s2">→</a></div>
+            <div><a href="#s1">←</a><a href="#s3">→</a></div>
+            <div><a href="#s2">←</a><a href="#s4">→</a></div>
+            <div><a href="#s3">←</a><a href="#s1">→</a></div>
+          </div>
+          <div class="bullets">
+            <a href="#s1"></a>
+            <a href="#s2"></a>
+            <a href="#s3"></a>
+            <a href="#s4"></a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 id="food-page" class="page-title">Food</h2>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <button class="pre-btn">←</button>
+        <button class="nxt-btn">→</button>
+        <div class="food-container">
+            <div class="food-card">
+              <div class="food-img-container">
+                <img src="{{ url_for('static', filename='img/uk/aloo_ke_gutke.jpg') }}" class="food-img" alt="Aloo Ke Gutke" />
+              </div>
+              <div class="food-info">
+                <h2 class="food-name">Aloo Ke Gutke</h2>
+                <p class="food-description">
+                  A popular Uttarakhandi dish made with boiled potatoes, which are sautéed with spices like cumin, coriander, and turmeric to give them a tangy, flavorful taste.
+                </p>
+              </div>
+            </div>
+            <div class="food-card">
+              <div class="food-img-container">
+                <img src="{{ url_for('static', filename='img/uk/bal_mithai.jpg') }}" class="food-img" alt="Bal Mithai" />
+              </div>
+              <div class="food-info">
+                <h2 class="food-name">Bal Mithai</h2>
+                <p class="food-description">
+                  A traditional sweet from Uttarakhand, Bal Mithai is made with khoya (milk solids) and coated with white sugar balls, often served as a treat during festivals and special occasions.
+                </p>
+              </div>
+            </div>
+            <div class="food-card">
+              <div class="food-img-container">
+                <img src="{{ url_for('static', filename='img/uk/phaanu.jpg') }}" class="food-img" alt="Phanu" />
+              </div>
+              <div class="food-info">
+                <h2 class="food-name">Phanu</h2>
+                <p class="food-description">
+                  Phanu is a nutritious dish made with rice, lentils, and a blend of spices. It is a staple in the Garhwali cuisine and is often paired with chutney or curd.
+                </p>
+              </div>
+            </div>
+            <div class="food-card">
+              <div class="food-img-container">
+                <img src="{{ url_for('static', filename='img/uk/kafuli.jpg') }}" class="food-img" alt="Kafuli" />
+              </div>
+              <div class="food-info">
+                <h2 class="food-name">Kafuli</h2>
+                <p class="food-description">
+                  Kafuli is a healthy, green curry made with leafy vegetables like spinach and fenugreek. It's typically served with rice or chapati and is rich in vitamins and minerals.
+                </p>
+              </div>
+            </div>
+            <div class="food-card">
+              <div class="food-img-container">
+                <img src="{{ url_for('static', filename='img/uk/dubuk.jpg') }}" class="food-img" alt="Dubuk" />
+              </div>
+              <div class="food-info">
+                <h2 class="food-name">Dubuk</h2>
+                <p class="food-description">
+                  Dubuk is a thick lentil-based curry from Uttarakhand, cooked with a variety of lentils, spices, and sometimes vegetables. It is often enjoyed with rice.
+                </p>
+              </div>
+            </div>
+            <div class="food-card">
+              <div class="food-img-container">
+                <img src="{{ url_for('static', filename='img/uk/baadi.jpg') }}" class="food-img" alt="Baadi" />
+              </div>
+              <div class="food-info">
+                <h2 class="food-name">Baadi</h2>
+                <p class="food-description">
+                  Baadi is a traditional Uttarakhandi dish made from buckwheat flour. It's often served as a side dish with curries and vegetables, providing a wholesome and filling meal.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+      </section>
+<section id="quiz-page">
+<div class="centre">
+    <div class="quiz">
+      <h1>Quiz</h1>
+      <h3>Test you knowledge on India</h3>
+      <p>Read the questions and answer with one of the given options.</p>
+      <p>Check the answer and move on to the next question if it is correct</p>
+      <p>If you chose the incorrect answer, try again until you have answered it right.</p>
+      <br>
+      <p><b style="font-weight: bolder;">Note: only first the try on the question will be scored.</b></p> 
+      <br>
+      
+      <button onclick="window.location.href='/static/quiz_attempt_copy/quiz _attempt_india/index.html'">START QUIZ</button>
+      <br>
+      <br>
+  </div>
+</div>
+</section>
+</div>
+</body>
+
+<script>
+const productContainers = [
+...document.querySelectorAll(".food-container"),
+];
+const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
+const preBtn = [...document.querySelectorAll(".pre-btn")];
+
+productContainers.forEach((item, i) => {
+let containerDimensions = item.getBoundingClientRect();
+let containerWidth = containerDimensions.width/2;
+
+nxtBtn[i].addEventListener("click", () => {
+item.scrollLeft += containerWidth;
+});
+
+preBtn[i].addEventListener("click", () => {
+item.scrollLeft -= containerWidth;
+});
+});
+</script>
+</html>

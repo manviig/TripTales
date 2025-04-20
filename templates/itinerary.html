@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Itinerary Maker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input, textarea, select, button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .itinerary-list {
+        margin-top: 20px;
+      }
+
+      .itinerary-item {
+        background: #e8f5e9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .itinerary-item h3 {
+        margin: 0 0 5px;
+      }
+
+      .itinerary-item p {
+        margin: 5px 0;
+      }
+
+      #itineraryContainer {
+        margin: 20px;
+        padding: 20px;
+        border: 2px solid #4CAF50;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+      }
+
+      #newItineraryForm {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      #newItineraryForm input,
+      #newItineraryForm button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      #newItineraryForm button {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+
+      #itineraryList {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #itineraryList li {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #e0f7fa;
+      }
+      button {
+  background: linear-gradient(45deg, #4caf50, #66bb6a);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #45a049, #388e3c);
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f4f9f4, #d0e8d0);
+  color: #333;
+}
+.itinerary-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.itinerary-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.itinerary-item h3 {
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+.itinerary-item p {
+  margin: 5px 0;
+}
+button.deleteBtn {
+  background-color: #f44336;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.deleteBtn:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button.editBtn {
+  background-color: #2196F3;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 20px;
+  margin-left: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.editBtn:hover {
+  background-color: #1976D2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+label {
+  color: #4caf50;
+  font-weight: bold;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.itinerary-item {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+header {
+  background: linear-gradient(90deg, #4caf50, #66bb6a);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+input, textarea, select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+input, textarea, select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+input, textarea, select, button {
+  border-radius: 20px;
+}
+
+.container {
+  border-radius: 20px;
+}
+.itinerary-item:hover {
+  background-color: #f1f8e9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.gradient-divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, #4caf50, #66bb6a);
+  margin: 20px 0;
+  border-radius: 1px;
+}
+header h1:hover {
+  color: #e8f5e9;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.itinerary-item img {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+footer {
+  background: linear-gradient(90deg, #4caf50, #66bb6a);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#itineraryApp {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#customItineraryForm {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#customItineraryDisplay {
+    margin-top: 30px;
+}
+
+#customItineraryList li {
+    background-color: #e0f7fa;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#customItineraryList li strong {
+    color: #4caf50;
+}
+
+#customItineraryList li p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Itinerary Maker</h1>
+    </header>
+   
+    
+    <div class="container">
+      <form id="newItineraryForm">
+        <div class="form-group">
+          <label for="day">Day</label>
+          <input type="number" id="dayInput" placeholder="Enter day number" required />
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="locationInput" placeholder="Enter location name" required />
+        </div>
+        <div class="form-group">
+          <label for="activity">Activity</label>
+          <textarea id="activityInput" placeholder="Describe the activity" required></textarea>
+        </div>
+        <button type="submit">Add to Itinerary</button>
+      </form>
+      <div class="itinerary-list" id="itineraryList">
+        <h2>Your Itinerary</h2>
+        <ul id="itineraryDisplay"></ul>
+      </div>
+    </div>
+    <hr class="gradient-divider" />
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerary Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Itinerary Generator</title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <div id="itineraryApp">
+          <h1>Personalized Itinerary Generator</h1>
+  
+          <!-- Custom Itinerary Form -->
+          <form id="customItineraryForm">
+              <h2>Let Us Create Your Personalized Itinerary</h2>
+              <div class="form-group">
+                  <label for="budget">Budget (USD)</label>
+                  <input type="number" id="budgetInput" placeholder="Enter your budget" required>
+              </div>
+              <div class="form-group">
+                  <label for="duration">Duration (days)</label>
+                  <input type="number" id="durationInput" placeholder="Enter duration in days" required>
+              </div>
+              <div class="form-group">
+                  <label for="preferences">Activity Preferences</label>
+                  <textarea id="preferencesInput" placeholder="Enter your activity preferences (e.g., adventure, relaxation, etc.)"></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="food">Dietary Preferences</label>
+                  <input type="text" id="foodInput" placeholder="Enter food preferences (e.g., vegetarian, non-veg, etc.)">
+              </div>
+              <button type="button" id="generateItineraryBtn">Generate Itinerary</button>
+          </form>
+  
+          <!-- Display Custom Itinerary -->
+          <div id="customItineraryDisplay">
+              <ul id="customItineraryList"></ul>
+          </div>
+  
+      </div>
+  
+      <script src="script.js"></script>
+  </body>
+  </html>
+  
+    <footer>
+      <p>© TRIPTALES Itinerary Maker | Made with ❤️</p>
+    </footer>
+</body>
+</html>
+
+   
+
+    <script>
+      // JavaScript for managing the itinerary
+      const form = document.getElementById("newItineraryForm");
+      const itineraryDisplay = document.getElementById("itineraryDisplay");
+// Load saved itineraries from localStorage on page load
+window.addEventListener("load", () => {
+  const savedItineraries = JSON.parse(localStorage.getItem("itineraries")) || [];
+  renderItineraries(savedItineraries);
+});
+
+      form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  // Collect form data
+  const day = document.getElementById("dayInput").value.trim();
+  const location = document.getElementById("locationInput").value.trim();
+  const activity = document.getElementById("activityInput").value.trim();
+
+  if (day && location && activity) {
+    // Save to localStorage
+    saveItinerary(day, location, activity);
+
+    // Re-render the itinerary list
+    const savedItineraries = JSON.parse(localStorage.getItem("itineraries")) || [];
+    renderItineraries(savedItineraries);
+    listItem.innerHTML = `
+  <strong>S.No. ${index + 1}</strong>: 
+  <span><img src="day-icon.png" alt="Day" style="width:16px;"> Day ${item.day}</span> - 
+  <span><img src="location-icon.png" alt="Location" style="width:16px;"> ${item.location}</span> <br>
+  <strong>Activity:</strong> 
+  <span><img src="activity-icon.png" alt="Activity" style="width:16px;"> ${item.activity}</span>
+  <button class="deleteBtn">Delete</button>
+`;
+
+    // Clear form fields
+    form.reset();
+  } else {
+    alert("Please fill out all fields!");
+  }
+});
+
+// Render itineraries in a numbered list
+function renderItineraries(itineraries) {
+  itineraryDisplay.innerHTML = ""; // Clear the current display
+  itineraries.forEach((item, index) => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+      <strong>S.No. ${index + 1}</strong>: Day ${item.day} - ${item.location} <br>
+      <strong>Activity:</strong> ${item.activity}
+      <button class="deleteBtn">Delete</button>
+    `;
+
+    // Add delete functionality
+    listItem.querySelector(".deleteBtn").addEventListener("click", () => {
+      deleteItinerary(item.day, item.location, item.activity);
+      const updatedItineraries = JSON.parse(localStorage.getItem("itineraries")) || [];
+      renderItineraries(updatedItineraries); // Re-render after deletion
+    });
+
+    itineraryDisplay.appendChild(listItem);
+  });
+}
+
+// Save itinerary to localStorage
+function saveItinerary(day, location, activity) {
+  const itineraries = JSON.parse(localStorage.getItem("itineraries")) || [];
+  itineraries.push({ day, location, activity });
+  localStorage.setItem("itineraries", JSON.stringify(itineraries));
+}
+
+// Delete itinerary from localStorage
+function deleteItinerary(day, location, activity) {
+  let itineraries = JSON.parse(localStorage.getItem("itineraries")) || [];
+  itineraries = itineraries.filter(
+    (item) => item.day !== day || item.location !== location || item.activity !== activity
+  );
+  localStorage.setItem("itineraries", JSON.stringify(itineraries));
+}
+document.getElementById("generateItineraryBtn").addEventListener("click", function () {
+    // Collect user inputs
+    const budget = document.getElementById("budgetInput").value.trim();
+    const duration = document.getElementById("durationInput").value.trim();
+    const preferences = document.getElementById("preferencesInput").value.trim();
+    const foodPreferences = document.getElementById("foodInput").value.trim();
+
+    if (!budget || !duration) {
+        alert("Please provide both budget and duration!");
+        return;
+    }
+
+    // Generate a custom itinerary based on inputs
+    const suggestedItinerary = generateEnhancedItinerary(budget, duration, preferences, foodPreferences);
+    renderCustomItinerary(suggestedItinerary);
+});
+
+// Enhanced Itinerary Logic
+function generateEnhancedItinerary(budget, duration, preferences, foodPreferences) {
+    const itinerary = [];
+    let location = '';
+    let activity = '';
+    let food = '';
+
+    // Budget-based destination suggestions
+    const locations = getLocationSuggestions(budget);
+
+    for (let i = 1; i <= duration; i++) {
+        location = locations[i % locations.length];
+        activity = getActivitySuggestions(preferences, location);
+        food = getFoodSuggestions(foodPreferences);
+
+        itinerary.push({
+            day: i,
+            location: location,
+            activity: activity,
+            food: food,
+            timeOfDay: getTimeOfDay(i),
+            notes: `Tip: Enjoy the sunset at ${location}!`,
+        });
+    }
+    return itinerary;
+}
+
+// Budget-based location suggestions
+function getLocationSuggestions(budget) {
+    const budgetLevels = {
+        low: ["Beach Town", "Countryside", "Small City"],
+        medium: ["Popular City", "Nature Resort", "Historical Town"],
+        high: ["Luxury Resort", "Mountain Retreat", "Beach Resort"]
+    };
+
+    if (budget < 1000) return budgetLevels.low;
+    if (budget < 3000) return budgetLevels.medium;
+    return budgetLevels.high;
+}
+
+// Activity suggestions based on preferences
+function getActivitySuggestions(preferences, location) {
+    if (preferences.includes("adventure")) {
+        return `Adventure activities in ${location}: Trekking, Zip-lining`;
+    } else if (preferences.includes("relaxation")) {
+        return `Relaxing activities in ${location}: Yoga, Spa`;
+    } else {
+        return `General activities in ${location}: Sightseeing, Cultural Tours`;
+    }
+}
+
+// Food suggestions based on dietary preferences
+function getFoodSuggestions(preferences) {
+    if (preferences.toLowerCase().includes("vegetarian")) {
+        return "Vegetarian-friendly restaurants and street food";
+    } else if (preferences.toLowerCase().includes("non-veg")) {
+        return "Non-vegetarian food options available";
+    } else {
+        return "Local cuisine with options for all diets";
+    }
+}
+
+// Time of day for activities
+function getTimeOfDay(day) {
+    if (day % 2 === 0) {
+        return "Morning & Afternoon: Excursions, Evening: Leisure";
+    }
+    return "Morning: Relaxing, Afternoon: Exploration, Evening: Cultural";
+}
+
+// Render the Custom Itinerary
+function renderCustomItinerary(itinerary) {
+    const customList = document.getElementById("customItineraryList");
+    customList.innerHTML = ""; // Clear previous suggestions
+    itinerary.forEach((item) => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+            <strong>Day ${item.day}</strong>: ${item.location} <br>
+            <strong>Activity:</strong> ${item.activity} <br>
+            <strong>Food Suggestion:</strong> ${item.food} <br>
+            <strong>Time of Day:</strong> ${item.timeOfDay} <br>
+            <strong>Tip:</strong> ${item.notes}
+        `;
+        customList.appendChild(listItem);
+    });
+}
+
+    </script>
+  </body>
+</html>

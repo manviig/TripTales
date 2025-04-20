@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+    <title>TRIP TALES</title>
+    <style>
+      
+      /* Add this CSS for the Itinerary Button */
+      #itineraryBtn {
+        position: fixed; /* Fixes the button on the screen */
+        bottom: 20px; /* 20px from the bottom */
+        left: 20px; /* 20px from the left */
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        padding: 10px 20px; /* Padding for the button */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Pointer on hover */
+        z-index: 1000; /* Ensures it appears above other elements */
+      }
+
+      #itineraryBtn:hover {
+        background-color: #45a049; /* Darker green on hover */
+      }
+
+      #chatbotButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #007bff;
+        color: rgb(30, 61, 102);
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Style for the chatbox */
+      #chatbox {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #23a09e;
+  border: 1px solid #f95a0a;
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+      /* Style for the chat header */
+      .chat-header {
+  background-color: #007bff;
+  color: rgb(11, 1, 1);
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+     /* Style for the chat content */
+     .chat-content {
+  padding: 10px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-height: 300px; /* Make it scrollable */
+  height: 100%;
+}
+
+
+
+      /* Style for the chat input */
+      #chatInput {
+        padding: 10px;
+        border: none;
+        border-top: 1px solid #cccccc;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        width: 100%;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Style for user messages */
+      .user-message {
+  background-color: #77c53b; /* WhatsApp-like green color */
+  padding: 10px;
+  margin: 5px 10px;
+  border-radius: 20px;
+  max-width: 70%; /* Limit the width of the message */
+  align-self: flex-end; /* Align the user's messages to the right */
+  font-size: 14px;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+      /* Style for bot messages */
+      .bot-message {
+  background-color: #702626; /* Light gray color for bot messages */
+  padding: 10px;
+  margin: 5px 10px;
+  border-radius: 20px;
+  max-width: 70%; /* Limit the width of the message */
+  align-self: flex-start; /* Align the bot's messages to the left */
+  font-size: 14px;
+  word-wrap: break-word;
+  display: inline-block;
+}
+    /* Explore Bookings Button */
+#exploreBookingsBtn {
+  display: inline-block; /* Ensures it's aligned properly with other buttons */
+  margin-top: 20px; /* Adds space above it */
+  width: 250px; /* Set the width same as the other buttons */
+  background-color: none; /* Red background (your choice) */
+  color: white; /* White text */
+  padding: 15px 30px; /* Padding */
+  border: white; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer on hover */
+  text-align: center; /* Center text */ /* Ensures it appears above other elements */
+  }
+
+#exploreBookingsBtn:hover {
+  background-color: none; /* Darker red on hover */
+}
+    </style>
+  </head>
+  <body>
+    <div class="low-opacity-bg-image" id="index-container">
+      <!-- <div id="index-vert-centre"> -->
+        <header>
+          <!-- Add Login and Sign Up buttons in the header -->
+          <div id="header-container">
+            <div id="header-container">
+              <!-- Login Button -->
+              <button class="button-text" onclick="window.location.href='/login'"><p>Login</p></button>
+
+          
+              <!-- Sign Up Button -->
+              <button class="button-text" onclick="window.location.href='/signup'"><p>Sign Up</p></button>
+
+          </div>
+          
+        
+        </header>
+      <h1 id="index-header">TRIP TALES</h1>
+      <h3 id="index-desc">DREAM , EXPLORE, DISCOVER</h3>
+      <p>Learn About A Country With A Click</p>
+      <br>
+      <button id="startBtn" class="button-1" onclick="window.location.href='/map'">
+        <p>Start Exploring</p>
+    </button>
+        
+      <!-- </div> -->
+      <div>
+        <!-- Plan Your Itinerary Button -->
+        <a href="{{ url_for('itinerary_page') }}" id="itineraryButton">
+            <button class="button-1">Plan Your Itinerary</button>
+        </a>
+    
+        <!-- Explore Bookings Button -->
+        <a href="{{ url_for('booking_page') }}" id="exploreBookingsBtn">
+          <button class="button-2" >Explore Bookings</button>
+        </a>
+       
+        
+    </div>
+    
+    
+    <div id="chatbotButton" onclick="toggleChat()">💬</div>
+
+    <!-- Chatbox (hidden initially) -->
+    <div id="chatbox">
+      <div class="chat-header">
+        <span>Chatbot</span>
+        <button onclick="toggleChat()">X</button>
+      </div>
+      <div id="chatContent" class="chat-content">
+        <!-- Chat messages will appear here -->
+      </div>
+      <input type="text" id="chatInput" placeholder="Type your message..." onkeyup="sendMessage(event)">
+    </div>
+
+    <script>
+       const qaPairs = [
+        { question: "What is the capital of India?", answer: "The capital of India is New Delhi." },
+        { question: "What is triptales?", answer: "Trip Tales is a platform to explore and plan trips." },
+        { question: "What  can i do here?", answer: "Trip Tales is a platform to explore and plan trips." },
+        { question: "What is the official language of South Korea?", answer: "The official language of South Korea is Korean." },
+        { question: "What currency is used in the USA?", answer: "The currency used in the USA is the US Dollar (USD)." },
+        { question: "How many states are there in the United States?", answer: "There are 50 states in the United States." },
+        { question: "Which is the tallest mountain in Japan?", answer: "The tallest mountain in Japan is Mount Fuji." },
+        { question: "What is the population of India?", answer: "The population of India is approximately 1.4 billion." },
+        { question: "What is the currency of Italy?", answer: "The currency of Italy is the Euro (€)." },
+        { question: "What is the national sport of South Korea?", answer: "The national sport of South Korea is Taekwondo." },
+        { question: "What is the famous landmark in the USA?", answer: "The Statue of Liberty is a famous landmark in the USA." },
+        { question: "When was India’s independence day?", answer: "India’s Independence Day is on August 15, 1947." },
+        { question: "What is the largest city in Japan?", answer: "The largest city in Japan is Tokyo." },
+        { question: "What is the main religion in India?", answer: "The main religion in India is Hinduism." },
+        { question: "What is the famous food in South Korea?", answer: "Kimchi is one of the most famous foods in South Korea." },
+        { question: "How old is the United States of America?", answer: "The United States of America was founded in 1776, so it is over 240 years old." },
+        { question: "What is the time zone of Japan?", answer: "Japan follows Japan Standard Time (JST), which is UTC +9." },
+        { question: "What is the official language of Italy?", answer: "The official language of Italy is Italian." },
+        { question: "What is the most popular sport in India?", answer: "Cricket is the most popular sport in India." },
+        { question: "What is the famous building in South Korea?", answer: "The Gyeongbokgung Palace is a famous historical building in South Korea." },
+        { question: "What is the area of the United States?", answer: "The area of the United States is about 9.8 million square kilometers." },
+        { question: "What is the best time to visit Japan?", answer: "The best time to visit Japan is during spring (March to May) and autumn (September to November)." },
+        { question: "What is the national animal of India?", answer: "The national animal of India is the Bengal Tiger." },
+        { question: "What is the population of South Korea?", answer: "The population of South Korea is approximately 51 million." },
+        { question: "What is the famous festival in the USA?", answer: "Thanksgiving Day is one of the most famous festivals in the USA." },
+        { question: "What is the national flower of Japan?", answer: "The national flower of Japan is the Cherry Blossom." },
+        // Add 100 questions here...
+      ];
+
+      // Function to toggle the visibility of the chatbox
+      function toggleChat() {
+  const chatbox = document.getElementById("chatbox");
+
+  if (chatbox.style.display === "none" || chatbox.style.display === "") {
+    chatbox.style.display = "flex";
+  } else {
+    chatbox.style.display = "none";
+  }
+}
+function getBotResponse(userMessage) {
+        const response = qaPairs.find((pair) =>
+          pair.question.toLowerCase().includes(userMessage.toLowerCase())
+        );
+        return response ? response.answer : "I'm sorry, I didn't understand that.";
+      }
+      
+      // Function to send a message when Enter is pressed
+      function sendMessage(event) {
+        if (event.key === 'Enter') {
+          const chatInput = document.getElementById('chatInput');
+          const message = chatInput.value.trim();
+
+          if (message) {
+            const chatContent = document.getElementById('chatContent');
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('user-message');
+            userMessage.textContent = message;
+            chatContent.appendChild(userMessage);
+
+            chatInput.value = ''; // Clear the input field
+            const botResponse =
+              qaPairs[message] || "I'm sorry, I didn't understand that. Please try again.";
+
+
+            // Simulate a bot response after 1 second
+            setTimeout(() => {
+              const botMessage = document.createElement('div');
+      botMessage.classList.add('bot-message');
+      botMessage.textContent = getBotResponse(message); // Get the bot's response
+      chatContent.appendChild(botMessage);
+
+     
+              chatContent.scrollTop = chatContent.scrollHeight; // Auto-scroll to the bottom
+            }, 1000);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
